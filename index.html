@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文件命名规则生成器 v1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <section class="hero" aria-labelledby="page-title">
+      <p class="version">v1</p>
+      <h1 id="page-title">文件命名规则生成器</h1>
+      <p class="subtitle">输入项目信息，一键生成规范文件名</p>
+    </section>
+
+    <section class="tool-panel" aria-label="文件命名表单">
+      <div class="form-grid">
+        <label class="field">
+          <span>日期</span>
+          <input id="dateInput" type="date" required>
+        </label>
+
+        <label class="field">
+          <span>客户名称</span>
+          <input id="customerInput" type="text" placeholder="例如：客户A" autocomplete="off">
+        </label>
+
+        <label class="field">
+          <span>项目名称</span>
+          <input id="projectInput" type="text" placeholder="例如：转向泵电机项目" autocomplete="off">
+        </label>
+
+        <label class="field">
+          <span>文件类型</span>
+          <select id="typeSelect">
+            <option value="测试数据">测试数据</option>
+            <option value="会议纪要">会议纪要</option>
+            <option value="设计资料">设计资料</option>
+            <option value="报价单">报价单</option>
+            <option value="客户资料">客户资料</option>
+            <option value="交付文件">交付文件</option>
+            <option value="其他">其他</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>版本号</span>
+          <input id="versionInput" type="text" value="V1.0" autocomplete="off">
+        </label>
+
+        <label class="field">
+          <span>文件扩展名</span>
+          <select id="extensionSelect">
+            <option value="xlsx">xlsx</option>
+            <option value="docx">docx</option>
+            <option value="pdf">pdf</option>
+            <option value="pptx">pptx</option>
+            <option value="txt">txt</option>
+            <option value="zip">zip</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="actions" aria-label="操作按钮">
+        <button id="generateBtn" type="button" class="primary">生成文件名</button>
+        <button id="copyBtn" type="button">复制结果</button>
+        <button id="clearBtn" type="button" class="secondary">清空内容</button>
+      </div>
+
+      <p id="message" class="message" role="status" aria-live="polite"></p>
+
+      <section class="output-box" aria-label="生成结果">
+        <span class="output-label">生成后的文件名</span>
+        <div id="output" class="output" tabindex="0">请填写信息后生成文件名</div>
+      </section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
